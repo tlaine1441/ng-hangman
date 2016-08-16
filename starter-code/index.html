@@ -9,10 +9,9 @@
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="js/hangman.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/controllers/hangmanController.js"></script>
 </head>
 
-<body class="full-background" ng-app="hangmanApp">
+<body class="full-background">
 <div class='container' id="container" ng-controller="HangmanController as hangmanController">
   <div id='poor-soul' class='row'>
     <pre class='col-md-6 col-md-offset-3'>
@@ -27,13 +26,12 @@ _________
 
     </pre>
     <div class='col-sm-12 col-md-6 col-md-offset-3 text-center'>
-      {{ tries }} tries remaining
+      ? tries remaining
     </div>
   </div>
   <div class='row'>
     <div class='col-sm-12 text-center'>
       <span class="label label-default">SOLVING:</span><br />
-      {{ completedWord }}
     </div>
     <div class='col-sm-12 text-center'>
       <span class='wide'></span>
@@ -43,7 +41,6 @@ _________
   <div class='row'>
     <div class='col-sm-12 text-center'>
       <span class="label label-default">GUESSES: </span> <br />
-      {{ hangmanController.game.guesses.join(', ') }}
     </div>
     <div class='col-sm-12 text-center' id='guesses'>
     </div>
@@ -54,7 +51,7 @@ _________
       <span class="label label-default">INPUT:</span>
     </div>
     <div class="col-sm-12 text-center">
-      <input type='text' size='1' id='guess' ng-model="currentGuess" ng-change="hangmanController.submitGuess()">
+      <input type='text' size='1' id='guess' />
     </div>
   </div>
   <div class='row' id='statuses'>
