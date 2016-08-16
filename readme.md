@@ -52,7 +52,7 @@ Let's get angular setup in our app.
 
 * `bower install` your front-end assets
 * add `ng-app` in the appropriate location and set it equal to your "hangmanApp"
-* register a new controller with your application called "hangmanCtrl" and use it in the view
+* register a new controller with your application called "HangmanController" and use it in the view
 
 ### Step 2: Game Properties
 
