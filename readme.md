@@ -44,23 +44,25 @@ You should have a new instance of a game. Now try running:
 ```js
 hangman.guess('x');
 hangman.guess('t');
-hangman.isWinner();
+hangman.gameWon;
 ```
 
 Note what is returned, and what changes on `hangman`.  You'll use this inside your angular controller.
 
->**Note:** If you get stuck on syntax for any of these steps, take a look at our [style guide](https://github.com/den-wdi-2/angular-style-guide) for suggestions.
+>**Note:** If you get stuck on syntax for any of these steps, take a look at our [style guide](https://github.com/den-materials/angular-style-guide) for suggestions.
+
+<!--This would be a great time to split the class up.  Those who want to do this independently can go to the lounge.  The rest can stay with an instructor for the "slow jazz" version -->
 
 ### Step 1: Initialization
 Let's get angular setup in our app.
 
 * `bower install` your front-end assets
 * add `ng-app` in the appropriate location and set it equal to your "hangmanApp"
-* register a new controller with your application called "HangmanController" and use it in the view
+* register a new controller with your application called "HangmanController" and test that it gets loaded (`console.log` for the win!)
 
 ### Step 2: Game Properties
 
-* in the controller instantiate a new game instance, `new HangmanGame('elephant')`, and pass it to the view. (how do we pass things to the view again? you may want to check an [old lab](https://github.com/den-wdi-2/angular-directives-lab/blob/master/starter-code/scripts/controllers/cardsController.js))
+* in the controller instantiate a new game instance, `new HangmanGame('elephant')`, and pass it to the view. (how do we pass things to the view again? you may want to check an [old lab](https://github.com/den-materials/angular-directives-lab/blob/master/starter-code/scripts/controllers/cardsController.js))
 * a `HangmanGame` instance provides `guesses`, `completedWord` and `triesRemaining` properties.
 Add these in the appropriate parts of the html using expressions to get the values from the hangmanGame to display on the page.
   * Hint: You might not be able to see the guesses until you make some.  We don't have
@@ -75,6 +77,7 @@ Add these in the appropriate parts of the html using expressions to get the valu
 * use `ng-model` to track the input field's value
 * use `ng-change` to call a function when the input changes and pass in the input's value
   * write a helper function in your controller that is passed into the view, e.g. `guessLetter`.
+  * run the game object's `.guess` method with the input's value
   * the input should be cleared after each character is typed
 
 ### Step 4: Win State
